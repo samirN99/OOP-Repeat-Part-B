@@ -1,12 +1,13 @@
 public class Applicant {
 
 
-    private int caoNumber;
-    private String name;
-    private String college;
-    private int leavingCertPoints;
+    public int caoNumber;
+    public String name;
+    public String college;
+    public int leavingCertPoints;
 
-    public Applicant() {
+    public  Applicant() {
+    }
 
     public Applicant(int caoNumber, String name, String college, int leavingCertPoints){
             this.caoNumber = caoNumber;
@@ -46,7 +47,27 @@ public class Applicant {
         public void setLeavingCertPoints(int leavingCertPoints) {
             this.leavingCertPoints = leavingCertPoints;
         }
+        @Override
+        public String toString() {
+            return "Applicant [CAO Number=" + caoNumber + ", Name=" + name + ", College=" + college
+                    + ", Leaving Cert Points=" + leavingCertPoints + "]";
+        }
 
+        @Override
+        public boolean equals(Object obj) {
+            if (this == obj) return true;
+            if (obj == null || getClass() != obj.getClass()) return false;
+            Applicant that = (Applicant) obj;
+            return caoNumber == that.caoNumber && name.equals(that.name);
+        }
+
+        @Override
+        public int hashCode() {
+            int result = Integer.hashCode(caoNumber);
+            result = 31 * result + name.hashCode();
+            return result;
+        }
     }
 }
+
 
