@@ -1,10 +1,10 @@
 public class Applicant {
 
 
-    public int caoNumber;
+    private int caoNumber;
    private String name;
-    public String college;
-    public int leavingCertPoints;
+    private String college;
+    private int leavingCertPoints;
 
     public  Applicant() {           // default constructor
     }
